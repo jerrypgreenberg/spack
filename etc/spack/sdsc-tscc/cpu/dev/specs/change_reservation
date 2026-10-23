@@ -1,0 +1,1 @@
+sed -i 's/reservation=spack_dev_cpu/reservation=spack/' $1

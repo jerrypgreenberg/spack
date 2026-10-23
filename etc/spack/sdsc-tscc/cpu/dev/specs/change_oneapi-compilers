@@ -1,0 +1,1 @@
+sed -i '' s/intel@19.1.1.217/intel-oneapi-compilers@2023.2.1/g $1

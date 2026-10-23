@@ -1,0 +1,1 @@
+sed -i 's/mvapich2@2.3.7-1/mvapich2@2.3.6/g' $1

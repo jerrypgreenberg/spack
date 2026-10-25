@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+
+#SBATCH --job-name=vasp@6.6.0
+#SBATCH --account=use300
+#SBATCH --reservation=spack
+#SBATCH --qos hotel #SBATCH --partition=hotel #SBATCH --nodes=1 #SBATCH --mem=160GB #SBATCH --ntasks-per-node=8
+#SBATCH --time=02:00:00
+#SBATCH --output=%x.o%j.%N
+
+declare -xr LOCAL_TIME="$(date +'%Y%m%dT%H%M%S%z')"
+declare -xir UNIX_TIME="$(date +'%s')"
+declare -xr SYSTEM_NAME='tscc'
+declare -xr SPACK_VERSION='0.21.2'
+declare -xr SPACK_INSTANCE_NAME='cpu'
+declare -xr SPACK_INSTANCE_DIR=/cm/shared/apps/spack/0.21.2/cpu
+declare -xr SLURM_JOB_SCRIPT="$(scontrol show job ${SLURM_JOB_ID} | awk -F= '/Command=/{print $2}')"
+declare -xr SLURM_JOB_MD5SUM="$(md5sum ${SLURM_JOB_SCRIPT})"
+
+declare -xr SCHEDULER_MODULE='slurm'
+
+echo "${UNIX_TIME} ${SLURM_JOB_ID} ${SLURM_JOB_MD5SUM} ${SLURM_JOB_DEPENDENCY}" 
+echo ""
+
+cat "${SLURM_JOB_SCRIPT}"
+. "${SPACK_INSTANCE_DIR}/share/spack/setup-env.sh"
+
+declare -xr SPACK_PACKAGE='vasp@6.6.0'
+declare -xr SPACK_COMPILER='gcc@13.3.0'
+declare -xr SPACK_COMPILER_MODULE='gcc/13.3.0'
+declare -xr SPACK_VARIANTS='~openmp +scalapack'
+declare -xr SPACK_DEPENDENCIES="^openmpi@4.1.6/$(spack find --format '{hash:7}' openmpi@4.1.6 % ${SPACK_COMPILER}) ^openblas@0.3.24/$(spack find --format '{hash:7}' openblas@0.3.24 % ${SPACK_COMPILER} symbol_suffix=none threads=none) ^netlib-scalapack@2.2.0/$(spack find --format '{hash:7}' netlib-scalapack % ${SPACK_COMPILER} ^openblas@0.3.24 symbol_suffix=none threads=none ^openmpi@4.1.6) ^rsync@3.2.7 % ${SPACK_COMPILER}"
+declare -xr SPACK_SPEC="${SPACK_PACKAGE} % ${SPACK_COMPILER} ${SPACK_VARIANTS} ${SPACK_DEPENDENCIES}"
+
+
+
+module purge
+module load "${SCHEDULER_MODULE}"
+module load "${SPACK_INSTANCE_NAME}/${SPACK_VERSION}"
+module load "${SPACK_COMPILER_MODULE}"
+module list
+
+printenv
+
+spack config get compilers
+spack config get config  
+spack config get mirrors
+spack config get modules
+spack config get packages
+spack config get repos
+spack config get upstreams
+
+
+
+echo ${SPACK_SPEC} > spec.$$
+
+spack spec --long --namespaces --types `cat spec.$$`
+
+if [[ "${?}" -ne 0 ]]; then
+  echo 'ERROR: spack concretization failed.'
+  exit 1
+fi
+
+export TMPDIR=/tmp
+
+time -p spack install -v --jobs "${SLURM_TASKS_PER_NODE}" --fail-fast --yes-to-all `cat spec.$$`
+
+if [[ "${?}" -ne 0 ]]; then
+  echo 'ERROR: spack install failed.'
+  exit 1
+fi
+
+spack module lmod refresh --delete-tree -y
+
+#sbatch --dependency="afterok:${SLURM_JOB_ID}" 'sundials@6.6.1.sh'
+
+sleep 20
+

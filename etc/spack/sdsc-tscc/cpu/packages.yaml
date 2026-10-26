@@ -1,0 +1,48 @@
+packages:
+  lustre:
+    externals:
+      - spec: 'lustre@2.14.0'
+        prefix: /usr
+    buildable: false
+  texlive:
+    externals:
+      - spec: 'texlive@live'
+        prefix: /usr
+    buildable: false
+  openssl:
+    externals:
+      - spec: 'openssl@3.0.7'
+        prefix: /usr
+    buildable: false
+  rdma-core:
+    externals:
+      - spec: 'rdma-core@44.0'
+        prefix: /usr
+    buildable: false
+  slurm:
+    externals:
+      - spec: 'slurm@23.02.07'
+        prefix: /cm/shared/apps/slurm/current
+    buildable: false
+  librsvg:
+    externals:
+      - spec: 'librsvg@2.50.7'
+        prefix: /usr
+    buildable: false
+  ghostscript:
+    externals:
+      - spec: 'ghostscript@9.54.0'
+        prefix: /usr
+    buildable: false
+  tar:
+    externals:
+      - spec: 'tar@1.34'
+        prefix: /usr
+# gaussian:
+#   permissions:
+#     read: group
+#     group: gaussian
+  vasp6:
+    permissions:
+      read: group
+      group: vasp-6

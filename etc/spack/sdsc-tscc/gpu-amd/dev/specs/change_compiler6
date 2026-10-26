@@ -1,0 +1,4 @@
+sed  -i 's/intel-oneapi-compilers\/2023.2.1/intel-oneapi-compilers\/2023.2.4/g' $1
+sed  -i 's/intel-oneapi-compilers\/2023.2.0/intel-oneapi-compilers\/2023.2.4/g' $1
+sed  -i 's/oneapi@2023.2.1/oneapi@2023.2.4/g' $1
+sed  -i 's/oneapi@2023.2.0/oneapi@2023.2.4/g' $1

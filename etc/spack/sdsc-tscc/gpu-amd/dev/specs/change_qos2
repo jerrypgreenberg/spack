@@ -1,0 +1,1 @@
+sed -i 's/--qos rtx3090/--qos condo/g' $1

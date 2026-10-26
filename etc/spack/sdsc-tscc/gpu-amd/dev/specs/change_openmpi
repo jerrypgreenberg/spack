@@ -1,0 +1,1 @@
+sed -i 's/openmpi@4.1.3/openmpi@4.1.6/g' $1

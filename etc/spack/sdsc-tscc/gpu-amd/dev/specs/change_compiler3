@@ -1,0 +1,1 @@
+sed  -i 's/oneapi\//intel-oneapi-compilers\//g' $1

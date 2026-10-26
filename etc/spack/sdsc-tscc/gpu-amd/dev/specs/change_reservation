@@ -1,0 +1,2 @@
+sed -i 's/reservation=spack_dev_gpu/reservation=spack_dev_gpu_4amd/' $1
+sed -i 's/qos condo/qos condo-gpu/' $1

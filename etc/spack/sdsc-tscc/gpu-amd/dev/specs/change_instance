@@ -1,0 +1,2 @@
+sed -i "s/SPACK_INSTANCE_NAME='gpu'/SPACK_INSTANCE_NAME='gpu-amd'/g" $1
+sed -i 's/SPACK_INSTANCE_DIR=\/cm\/shared\/apps\/spack\/0.21.2\/gpu/SPACK_INSTANCE_DIR=\/cm\/shared\/apps\/spack\/0.21.2\/gpu-amd/' $1

@@ -1,0 +1,1 @@
+sed -i s/sys200/use300/g $1

@@ -1,0 +1,7 @@
+ed -s $1 << EOF
+/--account/
+a
+#SBATCH --reservation=spack
+.
+w
+EOF

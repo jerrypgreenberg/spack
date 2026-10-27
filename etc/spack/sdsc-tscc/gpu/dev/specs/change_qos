@@ -1,0 +1,7 @@
+ed -s $1 << EOF
+/--account/
+a
+#SBATCH --qos hotel
+.
+w
+EOF

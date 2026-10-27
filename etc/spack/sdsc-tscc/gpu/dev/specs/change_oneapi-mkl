@@ -1,0 +1,1 @@
+sed -i '' s/intel-mkl@2020.4.304/intel-oneapi-mkl@2023.2.0/g $1

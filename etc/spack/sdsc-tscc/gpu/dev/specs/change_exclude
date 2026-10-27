@@ -1,0 +1,4 @@
+ed -s $1 << EOF
+g/--exclude/d
+w
+EOF

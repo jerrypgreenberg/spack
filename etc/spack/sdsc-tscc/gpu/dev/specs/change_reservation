@@ -1,0 +1,2 @@
+sed -i 's/reservation=os_update/reservation=spack_dev_gpu/' $1
+#sed -i 's/hotel-gpu/condo/' $1

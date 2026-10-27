@@ -1,0 +1,106 @@
+packages:
+  all: 
+    compiler: [gcc, intel, pgi, clang, xl, nag, fj, aocc,nvhpc]
+    providers:
+      awk: [gawk]
+      blas: [openblas, amdblis]
+      D: [ldc]
+      daal: [intel-oneapi-daal]
+      elf: [elfutils]
+      fftw-api: [fftw, amdfftw]
+      flame: [libflame, amdlibflame]
+      fuse: [libfuse]
+      gl: [glx, osmesa]
+      glu: [mesa-glu, openglu]
+      golang: [go, gcc]
+      go-or-gccgo-bootstrap: [go-bootstrap, gcc]
+      iconv: [libiconv]
+      ipp: [intel-oneapi-ipp]
+      java: [openjdk, jdk, ibm-java]
+      jpeg: [libjpeg-turbo, libjpeg]
+      lapack: [openblas, amdlibflame]
+      libglx: [mesa+glx, mesa18+glx]
+      libllvm: [llvm]
+      libosmesa: [mesa+osmesa, mesa18+osmesa]
+      lua-lang: [lua, lua-luajit-openresty, lua-luajit]
+      luajit: [lua-luajit-openresty, lua-luajit]
+      mariadb-client: [mariadb-c-client, mariadb]
+      mkl: [intel-oneapi-mkl]
+      mpe: [mpe2]
+      mpi: [openmpi, mpich,intel-oneapi-mpi]
+      mysql-client: [mysql, mariadb-c-client]
+      opencl: [pocl]
+      onedal: [intel-oneapi-dal]
+      pbs: [openpbs, torque]
+      pil: [py-pillow]
+      pkgconfig: [pkgconf, pkg-config]
+      qmake: [qt-base, qt]
+      rpc: [libtirpc]
+      scalapack: [netlib-scalapack, amdscalapack,intel-oneapi-mkl]
+      sycl: [hipsycl]
+      szip: [libaec, libszip]
+      tbb: [intel-tbb]
+      unwind: [libunwind]
+      uuid: [util-linux-uuid, libuuid]
+      xxd: [xxd-standalone, vim]
+      yacc: [bison, byacc]
+      ziglang: [zig]
+      zlib-api: [zlib-ng+compat, zlib]
+  lustre:
+    externals:
+      - spec: 'lustre@2.14.0'
+        prefix: /usr
+    buildable: false
+  texlive:
+    externals:
+      - spec: 'texlive@live'
+        prefix: /usr
+    buildable: false
+  openssl:
+    externals:
+      - spec: 'openssl@3.0.7'
+        prefix: /usr
+    buildable: false
+  rdma-core:
+    externals:
+      - spec: 'rdma-core@44.0'
+        prefix: /usr
+    buildable: false
+  slurm:
+    externals:
+      - spec: 'slurm@23.02.07'
+        prefix: /cm/shared/apps/slurm/current
+    buildable: false
+  librsvg:
+    externals:
+      - spec: 'librsvg@2.50.7'
+        prefix: /usr
+    buildable: false
+  ghostscript:
+    externals:
+      - spec: 'ghostscript@9.54.0'
+        prefix: /usr
+    buildable: false
+  tar:
+    externals:
+      - spec: 'tar@1.34'
+        prefix: /usr
+# gaussian:
+#   permissions:
+#     read: group
+#     group: gaussian
+  vasp6:
+    permissions:
+      read: group
+      group: vasp-6
+# qd:
+#   externals:
+#     - spec: 'qd@2.3.12 % nvhpc@23.9'
+#       prefix: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-23.9-riez5rexpfx3fnti5dethql3lh22x6fs/Linux_x86_64/23.9/compilers/extras/qd
+#   buildable: false
+  qd:
+    externals:
+      - spec: 'qd@2.3.12 % nvhpc@24.11'
+        prefix: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/compilers/extras/qd
+    buildable: false
+

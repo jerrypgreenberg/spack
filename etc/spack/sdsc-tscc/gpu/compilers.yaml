@@ -1,0 +1,187 @@
+compilers:
+- compiler:
+    spec: gcc@11.5.0
+    paths:
+      cc: /usr/bin/gcc
+      cxx: /usr/bin/g++
+      f77: /usr/bin/gfortran
+      fc: /usr/bin/gfortran
+    flags:
+      cflags: -O2 -march=native
+      cxxflags: -O2 -march=native
+      fflags: -O2 -march=native
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@11.4.1
+    paths:
+      cc: /usr/bin/gcc
+      cxx: /usr/bin/g++
+      f77: /usr/bin/gfortran
+      fc: /usr/bin/gfortran
+    flags:
+      cflags: -O2 -march=native
+      cxxflags: -O2 -march=native
+      fflags: -O2 -march=native
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@=13.3.0
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-13.3.0-ippsx5z3hsb7qgdnlb3rsnqu36hcdi45/bin/gcc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-13.3.0-ippsx5z3hsb7qgdnlb3rsnqu36hcdi45/bin/g++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-13.3.0-ippsx5z3hsb7qgdnlb3rsnqu36hcdi45/bin/gfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-13.3.0-ippsx5z3hsb7qgdnlb3rsnqu36hcdi45/bin/gfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=23.9
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-23.9-riez5rexpfx3fnti5dethql3lh22x6fs/Linux_x86_64/23.9/compilers/bin/nvc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-23.9-riez5rexpfx3fnti5dethql3lh22x6fs/Linux_x86_64/23.9/compilers/bin/nvc++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-23.9-riez5rexpfx3fnti5dethql3lh22x6fs/Linux_x86_64/23.9/compilers/bin/nvfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-23.9-riez5rexpfx3fnti5dethql3lh22x6fs/Linux_x86_64/23.9/compilers/bin/nvfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: [nvhpc/23.9]
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=24.11
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/compilers/bin/nvc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/compilers/bin/nvc++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/compilers/bin/nvfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/compilers/bin/nvfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: [nvhpc/24.11]
+    environment:
+      set:
+         NVCOMPILER_COMM_LIBS_HOME: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/comm_libs/12.6
+         NVHPC_CUDA_HOME: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-24.11-unheqvt5lqcia633oeda2h6wjwc3uerj/Linux_x86_64/24.11/cuda/12.6
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=22.11
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-22.11-ftykmgbirxvkr5qgcxijfqssputh7sps/Linux_x86_64/22.11/compilers/bin/nvc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-22.11-ftykmgbirxvkr5qgcxijfqssputh7sps/Linux_x86_64/22.11/compilers/bin/nvc++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-22.11-ftykmgbirxvkr5qgcxijfqssputh7sps/Linux_x86_64/22.11/compilers/bin/nvfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-22.11-ftykmgbirxvkr5qgcxijfqssputh7sps/Linux_x86_64/22.11/compilers/bin/nvfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: [nvhpc/22.11]
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=26.1
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-26.1-krgrhxcsnjsndhz27i6n5oetumxyyybk/Linux_x86_64/26.1/compilers/bin/nvc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-26.1-krgrhxcsnjsndhz27i6n5oetumxyyybk/Linux_x86_64/26.1/compilers/bin/nvc++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-26.1-krgrhxcsnjsndhz27i6n5oetumxyyybk/Linux_x86_64/26.1/compilers/bin/nvfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-26.1-krgrhxcsnjsndhz27i6n5oetumxyyybk/Linux_x86_64/26.1/compilers/bin/nvfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: [nvhpc/26.1]
+    environment:
+      set:
+         NVCOMPILER_COMM_LIBS_HOME:  /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/nvhpc-26.1-krgrhxcsnjsndhz27i6n5oetumxyyybk/Linux_x86_64/26.1/comm_libs
+    extra_rpaths: []
+- compiler:
+    spec: dpcpp@=2022.2.0
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.1-6vl2tbcy5q72fq5niaksvq6mljzm3q5j/compiler/latest/linux/bin/icx
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.1-6vl2tbcy5q72fq5niaksvq6mljzm3q5j/compiler/latest/linux/bin/dpcpp
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.1-6vl2tbcy5q72fq5niaksvq6mljzm3q5j/compiler/latest/linux/bin/ifx
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.1-6vl2tbcy5q72fq5niaksvq6mljzm3q5j/compiler/latest/linux/bin/ifx
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: intel@20.0.4
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/icc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/icpc
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/ifort
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/ifort
+    flags:
+      cflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+      cxxflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+      fflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: intel@19.1.3.304
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/icc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/icpc
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/ifort
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-20.0.4-q7bp7nhgqeckozafnvpt3f2cnorfsue4/bin/ifort
+    flags:
+      cflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+      cxxflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+      fflags: -gcc-name=/cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@=8.5.0
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gcc
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/g++
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gfortran
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/gcc-8.5.0-u7alrzf5uoqdiebqfyh25bh2a47rlddr/bin/gfortran
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: dpcpp@=2023.2.4
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/icx
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/dpcpp
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/ifx
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/ifx
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: oneapi@=2023.2.4
+    paths:
+      cc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/icx
+      cxx: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/icpx
+      f77: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/ifx
+      fc: /cm/shared/apps/spack/0.21.2/gpu/opt/spack/linux-rocky9-skylake_avx512/gcc-11.4.1/intel-oneapi-compilers-2023.2.4-bp53ft6afcsv764rnmgpt55mrebwfwtk/compiler/latest/linux/bin/ifx
+    flags: {}
+    operating_system: rocky9
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []

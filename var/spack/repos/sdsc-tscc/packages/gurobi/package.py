@@ -45,18 +45,21 @@ class Gurobi(Package):
     def patch(self):
         # Strip out existing PYTHONPATH as the presence of that will generally
         # break given that Spack has likely set that for a different Python.
-        gurobi_shell = join_path("linux64", "bin", "gurobi.sh")
-        filter_file(r":\$PYTHONPATH", "", gurobi_shell)
+        if self.spec.satisfies("@:10.99.99"):
+            gurobi_shell = join_path("linux64", "bin", "gurobi.sh")
+            filter_file(r":\$PYTHONPATH", "", gurobi_shell)
 
     def setup_run_environment(self, env):
         env.set("GUROBI_HOME", self.prefix)
         env.set("GRB_LICENSE_FILE", join_path(self.prefix, "gurobi.lic"))
+        env.prepend_path("LD_LIBRARY_PATH", join_path(self.prefix, "lib"))
 
     def install(self, spec, prefix):
         install_tree("linux64", prefix)
 
     @run_after("install")
     def gurobipy(self):
-        with working_dir("linux64"):
-            python = which("python")
-            python("setup.py", "install", "--prefix={0}".format(self.prefix))
+        if self.spec.satisfies("@:10.99.99"):
+            with working_dir("linux64"):
+                python = which("python")
+                python("setup.py", "install", "--prefix={0}".format(self.prefix))

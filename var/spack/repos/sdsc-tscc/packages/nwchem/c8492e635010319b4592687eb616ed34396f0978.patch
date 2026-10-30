@@ -1,0 +1,25 @@
+From c8492e635010319b4592687eb616ed34396f0978 Mon Sep 17 00:00:00 2001
+From: edoapra <edoardo.apra@gmail.com>
+Date: Wed, 3 Apr 2024 09:48:01 -0700
+Subject: [PATCH] URL update for dftd3
+ https://github.com/nwchemgit/nwchem/issues/962
+
+---
+ src/nwpw/nwpwlib/nwpwxc/build_dftd3a.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/nwpw/nwpwlib/nwpwxc/build_dftd3a.sh b/src/nwpw/nwpwlib/nwpwxc/build_dftd3a.sh
+index 3d20760ad2..2da1adfa4c 100755
+--- a/src/nwpw/nwpwlib/nwpwxc/build_dftd3a.sh
++++ b/src/nwpw/nwpwlib/nwpwxc/build_dftd3a.sh
+@@ -42,8 +42,8 @@ fi
+ check_patch
+ rm -f dftd3.f nwpwxc_vdw3a.F
+ export PATH=`pwd`:$PATH
+-#URL1="https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/"
+-URL1="https://www.chemiebn.uni-bonn.de/pctc/mulliken-center/software/dft-d3/"
++URL1="https://www.chemie.uni-bonn.de/grimme/de/software/dft-d3/dftd3.tgz"
++#URL1="https://www.chemiebn.uni-bonn.de/pctc/mulliken-center/software/dft-d3/"
+ URL2="https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/"
+ declare -a urls=("$URL1" "$URL1" "$URL1" "$URL2" "$URL2")
+ TGZ=dftd3.tgz

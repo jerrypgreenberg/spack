@@ -65,6 +65,6 @@ fi
 
 spack module lmod refresh --delete-tree -y
 
-#sbatch --dependency="afterok:${SLURM_JOB_ID}" 'rclone@1.56.2.sh'
+sbatch --dependency="afterok:${SLURM_JOB_ID}" 'gurobi@13.0.3.sh'
 
 sleep 20
